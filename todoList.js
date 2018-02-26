@@ -35,33 +35,26 @@ let todoList = {
     let todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
+  },
+  toggleAll: function() {
+    let totalTodos = this.todos.length;
+    let completedTodos = 0;
+
+    for (let i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+
+    if (completedTodos === totalTodos) {
+      for (let i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = false;
+      }
+    } else {
+      for (let i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
+    }
+    this.displayTodos();
   }
 };
-
-// //function to displayTodos
-// function displayTodos() {
-//   console.log('My todos: ', todos);
-// }
-//
-// //function to add
-// function addTodo(element) {
-//   todos.push(element)
-//   displayTodos()
-// }
-//
-// //function to change
-// function changeTodo(position, newValue) {
-//   todos[position] = newValue;
-//   displayTodos()
-// }
-//
-// //functin to delete
-// function deleteTodo(position) {
-//   todos.splice(position, 1)
-//   displayTodos()
-// }
-//
-// // displaytodos()
-// // addTodo('item 10');
-// // changeTodo(0, 'New Test')
-// // deleteTodo(0)
