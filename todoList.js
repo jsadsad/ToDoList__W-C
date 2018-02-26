@@ -31,7 +31,7 @@ let todoList = {
     this.todos.splice(position, 1);
     this.displayTodos();
   },
-  toggleCompleted: function(position){
+  toggleCompleted: function(position) {
     let todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
@@ -59,13 +59,11 @@ let todoList = {
   }
 };
 
-let displayTodosButton = document.getElementById('displayTodosButton');
-let toggleAllButton = document.getElementById('toggleAllButton');
-
-displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
-})
-
-toggleAllButton.addEventListener('click', function () {
-  todoList.toggleAll();
-})
+let handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+};
