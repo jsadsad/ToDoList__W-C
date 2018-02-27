@@ -1,3 +1,5 @@
 body {
-  background: radial-gradient(grey 10%, green 60%);
+  background: url('Loch_Carron_Scotland.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
